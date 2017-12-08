@@ -56,10 +56,15 @@ class AddNewCard extends Component {
         e.preventDefault();
         const store = e.target.elements.store.value;
         const price = e.target.elements.price.value;
-        const fimage = e.target.elements.fimage.value;
+        let fimage = e.target.elements.fimage.value;
+        let bimage = e.target.elements.bimage.value;        
         // console.log(fimage);
-        const bimage = e.target.elements.bimage.value;
         let exp = JSON.stringify(e.target.elements.exp.value);
+        fimage = fimage.replace(/\//g, "%2F");
+        fimage = fimage.replace(/-/g, "^");
+        bimage = bimage.replace(/\//g, "%2F");
+        bimage = bimage.replace(/-/g, "^");
+        console.log(fimage);
         exp = exp.replace(/-/g, ".")
         API.addNewCard(store, price, exp, fimage, bimage, localStorage.getItem("profile"));
     }

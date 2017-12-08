@@ -19,14 +19,14 @@ const UserSeed = [
     userCreated: new Date(Date.now()),
   },
   {
-    fullname: "Shelock Homes",
-    email:"duydo.dev@gmail.com",
+    fullname: "Sagarika",
+    email:"sagarika@gmail.com",
     password: "12345",
     userCreated: new Date(Date.now()),
   },
   {
-    fullname: "Duy Do 2",
-    email:"duydo2@gmail.com",
+    fullname: "Duy Do",
+    email:"duydo.photography@gmail.com",
     password: "12345",
     userCreated: new Date(Date.now()),
   }

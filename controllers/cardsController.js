@@ -50,17 +50,23 @@ module.exports = {
   },
   addNewCard: function(req,res) {
     // console.log(req.params);
+    let fimage = req.params.fimage;
+    fimage = fimage.replace(/\^/g, "-");
+    let bimage = req.params.bimage;
+    bimage = bimage.replace(/\^/g, "-");
+    console.log(fimage);
     let data = {
       store: req.params.store,
       price: req.params.price,
       chosen: false,    
-      fimage: req.params.fimage,
+      fimage: fimage,
       email: req.params.email,
       bimage: req.params.bimage,
-      exp: new Date(Date.now()),
+      exp: req.params.exp,
       traderEmail:"",
       expectedOwner:""
     }
+    // console.log(data);
     db.Card
     .collection.insertOne(data)
     .then(card => {
