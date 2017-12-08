@@ -1,5 +1,5 @@
 export const AUTH_CONFIG = {
-  domain: 'webauth.auth0.com',
-  clientId: 'niFiMEOp4hsdFPv2FyOAnQ8YSPM7R6Y4',
+  domain: 'duydodev.auth0.com',
+  clientId: 'w0sQ5l0y2ZDrIkZ8rf7XX9vHzCw40v8a',
   callbackUrl: 'http://localhost:3000/callback'
 }
