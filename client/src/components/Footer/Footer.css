@@ -1,0 +1,54 @@
+.second-footer-container{
+  position: absolute;
+    top: 100%;
+  height: 90px;
+  line-height: 90px;
+  background-color: #d11919 ;
+  width: 100%;
+  left: 0px;
+}
+
+.footer-text{
+  text-align: center;
+  position: relative;
+  top: 30px;
+  font-size: 20px;
+  font-family: 'Nixie One', cursive;
+  color: #fff;
+}
+
+.icon-container{
+  position: relative;
+  top: -20px;
+}
+
+.address{
+  width: 157px;
+  font-family: 'Quicksand',cursive;
+}
+
+.fa-map-marker{
+  position: relative;
+  top: -12px;
+  text-align: center;
+  font-size: 19px;
+  color: #fff;
+}
+
+.fa-envelope{
+  position: relative;
+  top: -2px;
+  float: right;
+  text-align: center;
+  font-size: 17px;
+  color: #fff;
+}
+
+.text-muted-two{
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Nixie One', cursive;
+  color: #fff;
+  line-height: 80px;
+
+}

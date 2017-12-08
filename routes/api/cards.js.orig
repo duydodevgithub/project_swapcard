@@ -1,0 +1,34 @@
+const router = require("express").Router();
+const cardsController = require("../../controllers/cardsController");
+
+// Matches with "/api/cards"
+router.route("/")
+  .get(cardsController.findAll)
+//   .post(cardController.create);
+
+// Matches with "/api/cards/:id"
+router
+  .route("/:id")
+  .get(cardsController.findById)
+//   .put(cardsController.update)
+//   .delete(cardsController.remove);
+
+// Matches with "/api/cards/email/:email"
+
+router
+  .route("/email/:email")
+  .get(cardsController.notify)
+<<<<<<< HEAD
+
+router
+  .route("/userProfile/email/:email")
+  .get(cardsController.findByEmail)
+=======
+  
+// Matches with "/api/cards/saveCard:"
+router
+  .route("/addNewCard/:store-:price-:exp-:fimage-:bimage")
+  .post(cardsController.addNewCard)
+>>>>>>> 6bed33112bc4023384e8dd5dda5150d7d1e0b809
+
+module.exports = router;

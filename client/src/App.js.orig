@@ -1,0 +1,46 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Cards from "./pages/Cards";
+// import UserProfile from "./components/UserProfile";
+import Auth from './Auth/Auth';
+import User from "./pages/User";
+// import Callback from './Callback/Callback';
+
+
+// const App = () =>
+//   <div className="container-fluid">
+//     <Cards />
+//   </div>;
+const auth = new Auth();
+
+const handleAuthentication = (nextState, replace) => {
+  if (/access_token|id_token|error/.test(nextState.location.hash)) {
+    auth.handleAuthentication();
+    console.log(auth);
+  }
+}
+
+const App = () =>
+<Router>
+  <div>
+    <Switch>
+      <Route exact path="/" component={Cards} />
+      <Route exact path="/user" render={(props) => {
+        return <User {...props}/>
+      }} />      
+      <Route path="/callback" render={(props) => {
+        console.log("runs handleAuthentication function now");
+        handleAuthentication(props);
+<<<<<<< HEAD
+        console.log(props);
+        return <User {...props}/>
+=======
+        // console.log(props);
+        return <Cards {...props}/>
+>>>>>>> 25221f64fe6d57f2ede2b945499459b76db6075d
+      }}/>
+    </Switch>
+  </div>
+</Router>;
+
+export default App;

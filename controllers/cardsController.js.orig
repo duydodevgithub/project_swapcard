@@ -1,0 +1,32 @@
+const db = require("../models");
+const notifyEmail = require("./email.js");
+
+// Defining methods for the booksController
+module.exports = {
+  findAll: function(req, res) {
+    db.Card
+      .find(req.query)
+      .sort({ date: -1 })
+      // .then(dbModel => res.json(dbModel))
+      .then(dbModel => res.send(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findById: function(req, res) {
+    db.Card
+    .findById(req.params.id)
+    .then(dbModel => res.send(dbModel))
+    .catch(err => res.status(422).json(err));
+  },
+  notify: function(req, res) {
+    notifyEmail(req.params.email)
+    console.log(req.params.email);
+  },
+<<<<<<< HEAD
+  findByEmail: function(req, res) {
+    db.User.find({email:req.params.email})
+=======
+  addNewCard: function(req,res) {
+    console.log(req.params);
+>>>>>>> 6bed33112bc4023384e8dd5dda5150d7d1e0b809
+  }
+};

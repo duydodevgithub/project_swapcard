@@ -1,0 +1,58 @@
+button {
+    margin: 10px;
+}
+
+.jumbotron {
+    
+    background-image: url("https://www.ascenciaca.org/wp-content/uploads/gift-cards_1482485395170_7454389_ver1.0.jpg");
+    position: relative;
+  	background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0px;
+    padding-right:0px;
+    padding-top:30px;
+  	padding-bottom:30px;
+  	border: 2px solid #202120;
+  	background-attachment: fixed;
+  
+
+}
+
+h1{
+	font-family: 'Carter One', cursive!important;
+	font-size: 100px!important;
+	padding-top: 0px;
+	margin-top: 0px;
+	color: white !important;
+	text-shadow: #C4201F 0.0em 0.0em 0.1em;
+
+	
+	
+}
+
+h2{
+	font-family: 'Carter One', cursive!important;
+	font-size: 30px!important;
+	color: white !important;
+	text-shadow: #C4201F 0.0em 0.0em 0.1em;
+	
+}
+
+html, body { 
+	overflow-x: hidden;
+	
+	 }
+
+
+
+
+
+button{
+	font-family: 'Basic', sans-serif !important;
+	background-color:#C4201F !important;
+	border-color:#C4201F !important;
+
+}
+
+

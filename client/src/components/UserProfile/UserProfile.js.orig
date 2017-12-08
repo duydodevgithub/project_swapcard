@@ -1,0 +1,125 @@
+import React, {Component} from "react";
+import "./UserProfile.css";
+// import Header from "../Header";
+import { Link } from "react-router-dom";
+import API from "../../utils/API";
+import Carousel from "../Carousel";
+import AddNewCard from "../AddNewCard";
+import Auth from "../../Auth/Auth.js";
+import { Button } from 'react-bootstrap';
+
+
+class UserProfile extends Component {
+    constructor(props) {
+        super(props)
+        this.auth = new Auth();
+    }
+    state = {
+        fullname: "",
+        email: "",
+        selectAddNewCard: undefined
+    }
+
+    logout() {
+        this.auth.logout();
+      }
+
+    componentDidMount() {
+        console.log(localStorage.getItem("profile"));
+        API.getUserProfile(localStorage.getItem("profile"))
+        .then(res => {
+            // console.log(res.data);
+            this.setState({
+                fullname: res.data.fullname,
+                email: res.data.email
+            })
+        }
+        ).catch(err => console.log(err));
+    };
+
+    selectAddNewCard = () => {
+        this.setState({
+            selectAddNewCard: true
+        })
+    }
+
+    unselectAddNewCard = () => {
+        this.setState({
+            selectAddNewCard: false
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                {/* header */}
+                <div className="jumbotron text-center">
+                    <h1>SwapCard Dashboard</h1>
+                    {/* creat button to test userprofile page route */}
+                    <button className={window.location.pathname === "/" ? "active" : ""}>
+                        <Link to="/">Back to homepage</Link>
+                    </button>
+                    {/* <button className={localStorage.getItem("profile") ? "active" : ""}>
+                        <Link to="/">Logout</Link>
+                    </button> */}
+
+<<<<<<< HEAD
+                    {/* {
+                      this.auth.isAuthenticated() && ( */}
+                          <Button
+                            bsStyle="primary"
+                            className="btn-margin"
+                            onClick={this.logout.bind(this)}
+                          >
+                            Log Out
+                          </Button>
+                        {/* )
+                    } */}
+=======
+                    {/* <button onClick={this.logout}> Logout </button> */}
+>>>>>>> 25221f64fe6d57f2ede2b945499459b76db6075d
+                </div>
+                {/* end header */}
+                <div className="container">
+                    <h2>Your Information</h2>
+                    <hr />
+                    {/* your information */}
+                    <div className="row">
+                        <div className="col-lg-5">
+                            <p><strong>Name:</strong> {this.state.fullname} </p>
+                            <p><strong>Email Address:</strong> {this.state.email} </p>
+                        </div>
+                        {/* <div className="col-lg-5">
+                            <p>You've got an order </p>
+                        </div> */}
+                    </div>
+                    {/* Notification start here */}
+                    <hr />                    
+                    <h2>Cards Notification</h2>
+                    <div className="row">
+                        <div className="col-lg-5">
+                            <p>You have notifications</p>
+                        </div>
+                    </div>
+                    {/* end card notification */}
+                    <h2>Cards Control</h2>
+                    <hr />
+                    <div className="row">
+                        <div>
+                            <button className="btn btn-success" onClick={this.selectAddNewCard} >Add new Card</button>
+                            {/* <button className="btn btn-danger">Click on card to remove</button> */}
+                        </div>
+                        <div>
+                            <Carousel cards={this.props.cards} />
+                        </div>
+                    </div>
+                
+                </div>
+                <AddNewCard unselectAddNewCard={this.unselectAddNewCard} selectAddNewCard={this.state.selectAddNewCard}/>
+                           
+            </div>
+        )
+    }
+}
+
+export default UserProfile;

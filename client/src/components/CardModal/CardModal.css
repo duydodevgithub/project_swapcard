@@ -1,0 +1,20 @@
+.img-container {
+    border-right: 1px dotted grey;
+}
+.img-container > img {
+    width: 60%;
+  }
+.cardDetail {
+    float: left;
+}
+.row h3 {
+    text-align: center;
+    margin: 0px;
+}
+.cardDetail li {
+    margin: 8px;
+  }
+.cardDetail ul {
+    margin-bottom: 30px;
+  }
+  
